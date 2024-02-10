@@ -1,0 +1,98 @@
+.pricing-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.pad-top{
+    margin-top: 5rem;
+}
+
+.flex-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing{
+    margin-bottom: 4rem;
+    width: 80%;
+    padding: 0 10%;
+}
+
+.prices{
+    width: 100%;
+    gap: 5%;
+}
+
+.price{
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+}
+
+.popular-p{
+    position: relative;
+    bottom: 18.3rem;
+    z-index: 2;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    padding: 4px 8px;
+}
+
+.popular{
+    border: 2px solid blue;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+.cards-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.icon4 {
+    width: 4.5rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin: 0 10%;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.card {
+    width: 12em;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    background-color: white;
+}
+
+@media (max-width: 820px) {
+
+}

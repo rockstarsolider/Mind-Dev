@@ -1,0 +1,62 @@
+.primaryButton {
+    font-family: 'Yekan';
+    border-radius: 7px;
+    background-color: #3646D3;
+    padding: 5px 25px;
+    border: none;
+    color: white;
+}
+
+.secondary-button {
+    font-family: 'Yekan';
+    color: white;
+    border: none;
+    border-radius: 7px;
+    background-color: #222020;
+    padding: 5px 25px;
+}
+
+.solid-button {
+    padding: 5px 25px;
+    font-family: yekan;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(128, 128, 128);
+    background-color: white;
+    border: solid 3px rgb(128, 128, 128);
+    border-radius: 40px;
+}
+
+.solid:focus {
+    color: rgb(0, 0, 0);
+    border: solid 3px rgb(0, 0, 0);
+}
+
+.solid:hover {
+    cursor: pointer;
+}
+
+.primary:hover {
+    cursor: pointer;
+}
+
+.secondary:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 820px) {
+    .primary {
+        padding: 4px 15px;
+    }
+
+    .secondary {
+        padding: 6px 25px;
+    }
+
+    .solid {
+        padding: 6px 25px;
+    }
+}

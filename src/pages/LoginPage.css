@@ -1,0 +1,51 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.Login{
+    font-size: 1.5rem;
+    padding: 0 10%;
+    text-align: center;
+}
+
+.login-link{
+    color: rgb(0, 0, 0);
+    margin-top: .5rem;
+    text-decoration: none;
+}
+
+.rocket{
+    display: flex;
+}
+
+.buttons-login{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 10rem;
+}
+
+.link-width{
+    text-align: center;
+    padding: 0 1rem;
+    background-color: #222020;
+    border-radius: 5px;
+}
+
+.link-width:hover{
+    background-color: #474747;
+}
+
+.login-c{
+    color: #928e8e;
+}
+
+
+
+@media (max-width: 820px){
+
+}

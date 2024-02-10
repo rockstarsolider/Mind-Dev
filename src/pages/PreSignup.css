@@ -1,0 +1,100 @@
+.pre-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .2);
+    padding: 0 10%;
+}
+
+.pre-signup{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.progress-bar{
+    width: 60%;
+    height: 1.5rem;
+}
+
+.showcase{
+    padding: 2% 10%;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding{
+    padding: 3rem 24%;
+}
+
+.robot{
+    width: 12%;
+}
+
+.box-comp{
+    display: flex;
+    padding: 1rem;
+    border: 1px solid grey;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: right;
+    gap: 1rem;
+    height: 3rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    background-color: white;
+}
+
+.boxes{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 20%;
+    gap: 1rem;
+}
+
+.showcase{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.dialog{
+    max-width: 15rem;
+    padding: 0 1rem;
+    border: 1px solid grey;
+    border-radius: .5rem;
+}
+
+#reaction{
+    color: red;
+    width: 80%;
+    text-align: center;
+}
+
+.email:focus{
+    border: 1px solid black;
+}
+
+.email{
+    margin-top: .5rem;
+    height: 40px;
+    width: 22%;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+.signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 700px){
+    .email{
+        width: 80%;
+    }
+}

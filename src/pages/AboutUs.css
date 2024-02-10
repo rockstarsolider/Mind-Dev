@@ -1,0 +1,97 @@
+.about-us{
+    padding: 0 10%;
+}
+
+.hero{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 10%;
+    border-bottom: 1px solid gray;
+}
+
+.OurTeam {
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.TeamCards {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-auto-rows: 250px;
+}
+
+.TeamCard {
+    margin: 0 3rem;
+}
+
+#LastTeam.TeamCard {
+    grid-column: 2 / 4;
+    grid-row: 3;
+}
+
+.TeamCard h2 {
+    margin-bottom: 5px;
+}
+
+.TeamCard h3 {
+    margin-top: 0;
+    font-weight: 500;
+    color: rgb(44, 44, 44);
+}
+
+.press {
+    margin: 7em 10%;
+}
+
+.press h1 {
+    margin-bottom: 2em;
+    margin-right: 3em;
+}
+
+.press p {
+    font-size: 22px;
+    padding: 4.5em 0;
+    margin: 0 5em;
+    border-radius: 10px;
+    border: solid rgba(0, 0, 0, 0.5);
+    direction: rtl;
+    text-align: center;
+}
+
+.press span {
+    color: #2A61B4;
+}
+
+@media (max-width: 820px) {
+    .about-us{
+        padding: 0 5%;
+    }
+
+    .OurTeam {
+        margin: 2em 0;
+        padding: 0;
+    }
+
+    .TeamCards {
+        margin: 0;
+        padding: 0;
+        grid-template-columns: repeat(2, 25%);
+    }
+
+    .TeamCard {
+        margin: 0;
+    }
+
+    .press {
+        margin: 0;
+    }
+
+    .press p {
+        padding: 4em 3em;
+    }
+}

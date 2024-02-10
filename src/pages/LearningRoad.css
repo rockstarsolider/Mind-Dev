@@ -1,0 +1,94 @@
+.border-area {
+    text-align: center;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    padding: 1.8rem 10%;
+    margin-top: 6rem;
+}
+
+.lerning-road{
+    margin: 3rem 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    width: 35%;
+    position: fixed;
+}
+
+.box-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-boxes{
+    width: 40%;
+    margin-left: 70%;
+    margin-top: 5rem;
+}
+
+.box-item{
+    border-right: 2px solid #D9D9D9;
+}
+
+.desc{
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid rgb(199, 196, 196);
+    box-shadow: 0px 0 6px rgba(0, 0, 0, .3);
+    padding: 1rem;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.closebtn{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.closebtn:hover{
+    background-color: #D9D9D9;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lession-end{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.overflow-hidden{
+    display: none;
+}
+
+@media (max-width: 820px) {
+    .lerning-road{
+        flex-direction: column;
+    }
+
+    .title{
+        position: relative;
+        width: 100%;
+    }
+
+    .all-boxes{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .box-item{
+        border: none;
+    }
+}

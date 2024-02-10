@@ -1,0 +1,50 @@
+.footer {
+    margin-top: 5em;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    padding: 3rem 10%;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col{
+    display: flex;
+}
+
+.txt-align{
+    justify-content: end;
+}
+
+.color-decor{
+    color: black;
+    text-decoration: none;
+}
+
+.pic{
+    position: relative;
+    bottom: 10px;
+    width: 12rem;
+}
+
+.icon{
+    font-size: 2rem;
+}
+
+.gap{gap: 10px;}
+
+@media (max-width: 820px) {
+    .footer {
+        grid-template-columns: 40% 40%;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+    }
+}

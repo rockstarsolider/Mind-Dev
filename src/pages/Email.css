@@ -1,0 +1,59 @@
+.email-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.email1{
+    font-size: 1.2rem;
+    height: 50px;
+    width: 23%;
+    border-radius: 8px;
+    border: 1px solid gray;
+    margin-bottom: .5rem;
+}
+
+.email1:focus{
+    transform: scale(1);
+    border: 2px solid #165AAA;
+}
+
+.rocket{
+    width: 150px;
+    height: 150px;
+}
+
+.other1{
+    background-color: white;
+    font-size: 30px;
+    height: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px;
+    border-radius: 7px;
+}
+
+#error{
+    color: red;
+}
+
+.Login-1{
+    font-size: 2rem;
+}
+
+
+
+@media (max-width: 820px){
+    .email1{
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px){
+    .email1{
+        width: 80%;
+    }
+}
