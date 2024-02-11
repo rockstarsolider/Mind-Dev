@@ -191,6 +191,7 @@ function MainPage() {
                 <img className="learn-img2" alt="" src={require('../style/main/Frame 26.jpg')}/>
                 <div className="learn-div">
                     <h2>به دنیای یادگیری بپیوندید</h2>
+                    <TextField InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} size='small' label="ایمیل" variant="outlined" />
                     <Link to='/SignUp'><Button primary>اکنون شروع کنید</Button></Link>
                 </div>
                 <img className="learn-img up-pos" alt="" src={require('../style/main/Frame 27.jpg')}/>

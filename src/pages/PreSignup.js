@@ -4,6 +4,8 @@ import {TbArrowLeft} from 'react-icons/tb'
 import { useState } from 'react'
 import { gsap } from 'gsap'
 import Button from '../components/Button'
+import TextField from '@mui/material/TextField';
+import BoxComp from '@mui/material/Box';
 
 function PreSignup() {
     const pageData = [
@@ -130,52 +132,49 @@ function PreSignup() {
     }
 
     const SignUpForm = () => {
-        const [email, setEmail] = useState('')
-        const [password, setPassword] = useState('')
-        const [passwordCon, setPasswordCon] = useState('')
-
-        const validateForm = () => {
-            const defaultColor = () => {
-                document.getElementById('email').style.border='1px solid grey'
-                document.getElementById('password').style.border='1px solid grey'
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const fields = new FormData(event.currentTarget);
+    
+            var state = 0
+    
+            if ( fields.get('password') === fields.get('passwordAgain')){
+                state = state+1
+            } else {
+                document.getElementById('error').innerHTML='رمز ها مطابقت ندارند';
+                state = state-1
             }
 
-            defaultColor()
+            if ( fields.get('password').length < 7){
+                document.getElementById('error').innerHTML='رمز باید حداقل 7 حرف باشد'
+                state = state-1
+            } else {state = state+1}
 
-            document.getElementById('reaction').innerHTML=' ';
-
-            if (password.length < 8) {
-                document.getElementById('reaction').innerHTML='گذرواژه نباید کمتر از 8 حرف باشد';
-                defaultColor()
-                document.getElementById('password').style.border='1px solid red'
-            }
-
-            if (passwordCon !== password) {
-                document.getElementById('reaction').innerHTML='گذرواژه مطابقت ندارد';
-                defaultColor()
-                document.getElementById('passwordCon').style.border='1px solid red'
-            }
-
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){} else {
-                document.getElementById('reaction').innerHTML='ایمیل صحیح نیست';
-                defaultColor()
-                document.getElementById('email').style.border='1px solid red'
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(fields.get('email'))){
+                state = state+1
+            } else {
+                document.getElementById('error').innerHTML='ایمیل صحیح نیست';
+                state = state-1
             }
     
-            if (email.length == 0){
-                document.getElementById('reaction').innerHTML='ایمیل را وارد کنید';
-                defaultColor()
-                document.getElementById('email').style.border='1px solid red'
+            if(state === 3){
+                document.getElementById('error').innerHTML=''
+                // console.log({
+                //     email: data.get('email'),
+                //     password: data.get('password'),
+                // });
             }
-        }
+        };
 
         return (
             <div className="signup">
-                <input id="email" className="email" placeholder=" ایمیل" onChange={(e) => setEmail(e.target.value)}></input>
-                <input id="password" type="password" className="email" placeholder=" گذرواژه"  onChange={(e) => setPassword(e.target.value)}></input>
-                <input id="passwordCon" type="password" className="email" placeholder="تایید گذرواژه"  onChange={(e) => setPasswordCon(e.target.value)}></input>
-                <p id="reaction"></p>
-                <div onClick={validateForm}><Button primary>ثبت نام</Button></div>
+                <BoxComp component="form" onSubmit={handleSubmit} noValidate sx={{ display:'flex', flexDirection:'column', alignItems:'center' }}>
+                    <TextField name='email' InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} size='small' label="ایمیل" variant="outlined" />
+                    <TextField name="password" margin="normal" InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} size='small' label="رمز" variant="outlined" type='password' autoComplete="current-password"/>
+                    <TextField name="passwordAgain" margin="normal" InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} size='small' label="تکرار رمز" variant="outlined" type='password' autoComplete="current-password"/>
+                    <p id="error"></p>
+                    <Button primary>ثبت نام</Button>
+                </BoxComp>
                 <p>-------------   یا   -------------</p>
                 <div><Button secondary>ورود با گوگل</Button></div>
             </div>

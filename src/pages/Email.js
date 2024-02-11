@@ -45,8 +45,8 @@ function Email(){
             <img className="rocket" alt="" src={rocket}/>
             <p className="Login-1">ورود</p>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ display:'flex', flexDirection:'column', alignItems:'center' }}>
-                <TextField name="email" required margin="normal" autoComplete="email" variant="outlined" id="email1" label=" ایمیل" size="small"></TextField>
-                <TextField name="password" required margin="normal" autoComplete="current-password" variant="outlined"  id="password1" type="password" label=" گذرواژه" size="small"></TextField>
+                <TextField InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} name="email" required margin="normal" autoComplete="email" variant="outlined" id="email1" label=" ایمیل" size="small"></TextField>
+                <TextField InputLabelProps={{style:{fontWeight:500,fontFamily:'yekan'}}} name="password" required margin="normal" autoComplete="current-password" variant="outlined"  id="password1" type="password" label=" گذرواژه" size="small"></TextField>
                 <p id="error"></p>
                 <Button secondary>ورود</Button>
             </Box>
