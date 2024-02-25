@@ -98,17 +98,30 @@ body {
 .sec-box{
     display: flex;
     align-items: start;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 3rem;
     width:100%;
+    position: relative;
+}
+
+.sec-box2{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 3rem;
+    width:100%;
+    position: relative;
 }
 
 .sec{
-    width: 40%;
+    width: 30%;
+    position: relative;
+    bottom: 2rem;
 }
 
 .img-container{
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
     border:3px blue solid;
     border-radius: 10rem;
     padding: 5px;
@@ -117,15 +130,37 @@ body {
     align-items: center;
     background-color: white;
     z-index: 1;
+    position: relative;
+    bottom: 3rem;
 }
 
 .line-c{
     width: 2rem;
+    height: 25rem;
+    background-color: blue;
+    position: relative;
+    right: 32.5%;
+    top: 1rem;
+}
+
+.line-rot{
+    width: 2rem;
     height: 20rem;
     background-color: blue;
     position: relative;
-    right: 30%;
-    top: 1rem;
+    transform: rotate(38deg);
+    top: 3rem;
+    right: 3rem;
+}
+
+.line-rot2{
+    width: 2rem;
+    height: 20rem;
+    background-color: blue;
+    position: relative;
+    transform: rotate(-38deg);
+    top: 3rem;
+    right: -3rem;
 }
 
 @media (max-width: 820px) {

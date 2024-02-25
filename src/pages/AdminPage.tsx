@@ -4,6 +4,8 @@ import Button from '../components/Button'
 import * as React from 'react';
 import ReactPlayer from 'react-player'
 import {PriceBox, Card} from './PricingPage'
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
@@ -22,6 +24,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { FaTasks } from "react-icons/fa";
@@ -40,6 +47,8 @@ function AdminPage() {
     const HandleHamburger = () => {
         setMenuOpen(!menuOpen)
     }
+
+    const [score, setScore] = useState(1)
 
     const pageData = [
         {
@@ -97,13 +106,59 @@ function AdminPage() {
         },
     ]
 
+    const [open, setOpen] = React.useState(false)
+
+    const Dialogue = () => {
+        const handleClose = () => {
+            setOpen(false);
+          };
+        return(
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle sx={{fontWeight:500,fontFamily:'yekan'}} id="alert-dialog-title">
+                    {"تبریک"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description" sx={{fontWeight:500,fontFamily:'yekan'}}>
+                        تبریک میگوییم شما به سطح بعد پیشرفت کردید
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button primary onClick={handleClose}>بازگشت به پنل</Button>
+                </DialogActions>
+            </Dialog>
+        )
+    }
+
     const Header = () => {
+        const HeadIcon = () => {
+            if (score < 10) {
+                return <img src={require('../style/admin/bronze.png')}/>
+            } else if (score < 25) {
+                return <img src={require('../style/admin/silver.png')}/>
+            } else if (score > 24) {
+                return <img src={require('../style/admin/gold.png')}/>
+            }
+        }
+
+        const HandleScore = () => {
+            if (score < 10 && score+5 > 9) {
+                setOpen(true)
+            } else if (score < 25 && score+5 > 24) {
+                setOpen(true)
+            }
+            setScore(score+5)
+        }
+
         if (!menuOpen){
             return (
                 <div className="admin-header" style={{width:'95%'}}>
-                    <div className='header-con'><img alt='' src={require('../style/Group 2.png')}/><p>پوریا غیاثی</p><div className='gap-1'><p>امتیاز: 15</p><PiMedalLight className='icon'/></div>
-                </div>
-                <GiHamburgerMenu className='ham-icon' onClick={HandleHamburger}/>
+                    <div className='header-con'><img alt='' src={require('../style/Group 2.png')}/><p>پوریا غیاثی</p><div className='gap-1'><p>امتیاز: {score}</p><HeadIcon/></div></div>
+                    <GiHamburgerMenu className='ham-icon' onClick={HandleHamburger}/>
                 </div>
             )
         }
@@ -114,11 +169,13 @@ function AdminPage() {
                     <img alt='' src={require('../style/Group 2.png')}/>
                     <p>پوریا غیاثی</p>
                     <div className='gap-1'>
-                        <p>امتیاز: 15</p>
-                        <PiMedalLight className='icon'/>
+                        <p>امتیاز: {score}</p>
+                        <div id='headicon' className='headicon'><HeadIcon/></div>
                     </div>
                 </div>
+                <div onClick={HandleScore}><Button secondary>add score</Button></div>
                 <GiHamburgerMenu className='ham-icon' onClick={HandleHamburger}/>
+                <Dialogue/>
             </div>
         )
     }
@@ -148,7 +205,8 @@ function AdminPage() {
             return <div className='welcome flex-box'>
                 <img alt='' width={'15%'} src={require('../style/Group 2.png')}/>
                 <h2 >خوش آمدی پوریا</h2>
-                <p>در حال حاضر 15 امتیاز داری که میتونی با حل تمرینات و شرکت در جلسات امتیاز خودت رو بالا ببری</p>
+                <p>در حال حاضر {score} امتیاز داری که میتونی با حل تمرینات و شرکت در جلسات امتیاز خودت رو بالا ببری</p>
+                
             </div>
         }
 

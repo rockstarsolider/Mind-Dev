@@ -11,15 +11,15 @@ function PreSignup() {
     const pageData = [
         {
             dialog: 'سلام خوش آمدی',
-            img:'rob1.png'
+            img:'robot.jpg'
         },
         {
             dialog: 'بریم شروع کنیم',
-            img: 'rob2.png'
+            img: 'robot.jpg'
         },
         {
             dialog: 'تو از کدام شهر هستی؟',
-            img: 'rob1.png',
+            img: 'robot.jpg',
             boxProps: [
                 {
                 city:'شیراز',
@@ -45,25 +45,29 @@ function PreSignup() {
         },
         {
             dialog: 'چه چیزی دوست داری یاد بگیری؟',
-            img: 'rob1.png',
+            img: 'robot.jpg',
             boxProps: [
                 {
                 city:'طراحی وب',
-                img: require('../style/cities/kerman.png')
+                img: require('../style/main/web design.png')
                 },
                 {
                 city:'هوش مصنوعی',
-                img: require('../style/cities/kerman.png')
+                img: require('../style/main/ai.png')
                 },
                 {
                 city:'بازی سازی',
-                img: require('../style/cities/kerman.png')
+                img: require('../style/main/game.png')
+                },
+                {
+                city:'گرافیک',
+                img: require('../style/main/design.png')
                 },
             ]
         },
         {
             dialog: 'چرا طراحی وب یاد میگیری؟',
-            img: 'rob1.png',
+            img: 'robot.jpg',
             boxProps: [
                 {
                 city:'اصرار خانواده',
@@ -85,15 +89,15 @@ function PreSignup() {
         },
         {
             dialog: 'میدونیم خیلی سخته که همیشه با انگیزه باشی ',
-            img:'rob1.png'
+            img:'robot.jpg'
         },
         {
             dialog: 'ما در مایندو بهت کمک میکنیم تا همیشه فعال بمونی',
-            img:'rob2.png'
+            img:'robot.jpg'
         },
         {
             dialog: 'میخوای بهتر بهت کمک کنیم تا به هدفت برسی؟',
-            img:'rob1.png'
+            img:'robot.jpg'
         },
     ]
 
@@ -121,12 +125,21 @@ function PreSignup() {
         
         return(
             pageData[currentPage].boxProps.map((item, index) => {
-                return(
-                    <button key={index} id={index} onClick={(event) => setTop(event,item.city)} className='box-comp'>
-                    <p>{item.city}</p>
-                    <img src={item.img} width='70px'/>
-                    </button>
-                )
+                if (currentPage === 3){
+                    return(
+                        <button key={index} id={index} onClick={(event) => setTop(event,item.city)} className='box-comp'>
+                            <img src={item.img} width='45px'/>
+                            <p>{item.city}</p>
+                        </button>
+                    )
+                } else {
+                    return(
+                        <button key={index} id={index} onClick={(event) => setTop(event,item.city)} className='box-comp'>
+                            <img src={item.img} width='70px'/>
+                            <p>{item.city}</p>
+                        </button>
+                    )
+                }
             })
         )
     }
@@ -194,15 +207,15 @@ function PreSignup() {
             toUpRight()
             document.getElementById('continue').style.display='none'
             setArg('city')
-            return <div className='boxes'><Box/></div>    
+            return <div dir='rtl' className='boxes'><Box/></div>    
         } else if( currentPage === 3) {
             document.getElementById('continue').style.display='none'
             setArg('course')
-            return <div className='boxes'><Box/></div>
+            return <div dir='rtl' className='boxes'><Box/></div>
         } else if( currentPage === 4) {
             document.getElementById('continue').style.display='none'
             setArg('why')
-            return <div className='boxes'><Box/></div>
+            return <div dir='rtl' className='boxes'><Box/></div>
         } else if ( currentPage === 5){
             toDownLeft()
         } else if ( currentPage === 7 ){
